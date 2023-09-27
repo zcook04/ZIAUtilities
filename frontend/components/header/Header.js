@@ -8,9 +8,7 @@ const Header = () => {
         <header className={styles.header}>
             <h2>Zscaler Internet Access Utilities</h2>
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
+                <li>Optimize GRE POPs</li>
             </ul>
         </header>
     )
