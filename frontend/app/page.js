@@ -3,6 +3,7 @@
 import styles from './page.module.scss'
 import react, { useState, useEffect } from 'react'
 import { toast } from 'react-toastify'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
   const baseUrls = [
@@ -18,6 +19,7 @@ export default function Home() {
   const [password, setPassword] = useState('')
   const [apiKey, setApiKey] = useState('')
   const [cloud, setCloud] = useState('')
+  const router = useRouter()
 
   const submitHandler = async () => {
     if (cloud === '') {
@@ -52,14 +54,12 @@ export default function Home() {
         body
       })
 
-      // if (response.ok) {
-      //   toast.success("Authentication successful.")
-      //   const data = await response.json()
-      //   console.log(data)
-      // } else {
-      //   console.log(response)
-      //   toast.error("Authentication failed.")
-      // }
+      if (response.ok) {
+        router.push("/tools/dashboard")
+      } else {
+        console.log(response)
+        toast.error("Authentication failed.")
+      }
 
     } catch (error) {
       console.error(error)
