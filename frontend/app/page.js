@@ -37,13 +37,12 @@ export default function Home() {
 
     try {
       const timestamp = Date.now().toString()
-      const url = `https://${cloud}/api/v1/authenticatedSession`
       const body = JSON.stringify({
         username,
         password,
         apiKey,
         timestamp,
-        url
+        cloud
       })
 
       const response = await fetch('/api/auth/login', {
