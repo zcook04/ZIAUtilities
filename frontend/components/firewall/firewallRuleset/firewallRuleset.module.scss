@@ -1,3 +1,6 @@
 .mainSection {
-    color: var(--color-2)
+    ul {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+    }
 }
