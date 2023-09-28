@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { cookies } from 'next/headers'
 
 export async function DELETE(req) {
-    if (!cookies().get("Cloud") || cookies.get("ZscalerAuthToken")) {
+    if (!cookies().get("Cloud") || !cookies().get("ZscalerAuthToken")) {
         console.error("Authentication failed. Cloud Required")
         return NextResponse.json({ message: "Authentication failed. Cloud Required" }, { status: 401 })
     }
