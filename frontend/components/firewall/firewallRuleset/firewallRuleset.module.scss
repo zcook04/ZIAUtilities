@@ -1,7 +1,7 @@
 .mainSection {
     ul {
         display: grid;
-        grid-template-columns: .5fr 2fr 1fr .5fr .5fr 2fr;
+        grid-template-columns: .5fr 2fr 1fr .5fr .5fr .5fr 2fr;
         overflow: hidden;
         font-weight: 400;
         background-color: var(--color-4);
@@ -22,5 +22,12 @@
 
     .filteringRules {
         font-weight: 200;
+        transition: all .25s ease-in-out;
+    }
+
+    .filteringRules:hover {
+        cursor: pointer;
+        transition: all .25s ease-in-out;
+        transform: scale(1.01);
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './firewallRuleset.module.scss'
+import Link from 'next/link'
 
 const FirewallRuleset = ({ filteringRules, loading }) => {
     const customSort = (a, b) => {
@@ -7,8 +8,6 @@ const FirewallRuleset = ({ filteringRules, loading }) => {
         if (b.order === -1) return -1;
         return a.order - b.order;
     }
-
-    console.log(filteringRules)
 
     return (
         <section className={styles.mainSection}>
@@ -18,22 +17,26 @@ const FirewallRuleset = ({ filteringRules, loading }) => {
                 <li className={styles.filteringHeaders}>Name</li>
                 <li className={styles.filteringHeaders}>Action</li>
                 <li className={styles.filteringHeaders}>State</li>
-                <li className={styles.filteringHeaders}>Severity</li>
+                <li className={styles.filteringHeaders}>Sev</li>
+                <li className={styles.filteringHeaders}>Findings</li>
                 <li className={styles.filteringHeaders}>Description</li>
-
-                {filteringRules && filteringRules.length > 0 && filteringRules.sort((a, b) => (customSort(a, b))).map((rule) => {
-                    return (
-                        <React.Fragment key={rule.id}>
-                            <li className={styles.filteringRules} >{rule.order}</li>
-                            <li className={styles.filteringRules} >{rule.name}</li>
-                            <li className={styles.filteringRules} >{rule.action}</li>
-                            <li className={styles.filteringRules} >{rule.state}</li>
-                            <li className={styles.filteringRules} >N/A</li>
-                            <li className={styles.filteringRules} >{rule.description || "None"}</li>
-                        </React.Fragment>
-                    )
-                })}
             </ul>
+
+            {filteringRules && filteringRules.length > 0 && filteringRules.sort((a, b) => (customSort(a, b))).map((rule) => {
+                return (
+                    <Link key={rule.id} href={`/tools/firewall-filtering/${rule.id}`}>
+                        <ul className={styles.filteringRules}>
+                            <li  >{rule.order}</li>
+                            <li >{rule.name}</li>
+                            <li >{rule.action}</li>
+                            <li >{rule.state}</li>
+                            <li >N/A</li>
+                            <li >N/A</li>
+                            <li >{rule.description || "None"}</li>
+                        </ul>
+                    </Link>
+                )
+            })}
 
             {!filteringRules && !loading && <p>An Error Occurred. Failed to retrieve firewall rules.</p>}
             {loading && <p>Loading Filtering Rules...</p>}
