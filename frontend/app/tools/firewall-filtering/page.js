@@ -38,9 +38,7 @@ const FirewallFilteringPage = () => {
 
     return (
         <>
-            <section className={styles.summarySection}>
-                <SummarySection title={'Firewall Filtering'} description={'Review and analyze common security misconfigurations as it relates to the firewall filtering policy withing Zscaler Internet Access.'} />
-            </section>
+            <SummarySection title={'Firewall Filtering'} description={'Review and analyze common security misconfigurations as it relates to the firewall filtering policy withing Zscaler Internet Access.'} />
             <FirewallRuleset filteringRules={filteringRules} loading={loading} setLoading={setLoading} />
         </>
     )
