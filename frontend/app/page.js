@@ -81,7 +81,7 @@ export default function Home() {
 
       {!loading && <section className={styles.loginWrapper}>
         <h1>Authenticate To ZIA</h1>
-        (<select value={cloud} onChange={(e) => setCloud(e.target.value)}>
+        <select value={cloud} onChange={(e) => setCloud(e.target.value)}>
           <option>Select Your Cloud</option>
           {baseUrls.map(url => <option key={url}>{url}</option>)}
         </select>
