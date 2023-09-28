@@ -1,4 +1,8 @@
-.mainsectioon {
+.summarySection {
     display: flex;
     flex-direction: column;
+}
+
+.mainSection {
+    color: var(--color-2)
 }
