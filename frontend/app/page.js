@@ -88,7 +88,7 @@ export default function Home() {
         <input type="text" name="username" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
         <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
         <input type="password" name="apiKey" placeholder="API Key" value={apiKey} onChange={(e) => setApiKey(e.target.value)} />
-        <div className={styles.button} onClick={submitHandler}>Authenticate</div>)
+        <div className={styles.button} onClick={submitHandler}>Authenticate</div>
       </section>}
 
       {loading && <section className={styles.loginWrapper}><span className={styles.loadingText}>Loading, Please Wait...</span></section>}
