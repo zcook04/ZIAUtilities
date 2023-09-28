@@ -3,7 +3,7 @@ import { Poppins } from 'next/font/google'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-const poppings = Poppins({ subsets: ['latin'], weight: ['100', '400', '700'] })
+const poppings = Poppins({ subsets: ['latin'], weight: ['100', '200', '300', '400', '700'] })
 
 export const metadata = {
   title: 'Create Next App',
