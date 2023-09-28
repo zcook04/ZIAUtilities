@@ -1,13 +1,26 @@
 .mainSection {
     ul {
         display: grid;
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: .5fr 2fr 1fr .5fr .5fr 2fr;
+        overflow: hidden;
+        font-weight: 400;
+        background-color: var(--color-4);
+        list-style: none;
+        color: var(--color-2);
+        font-weight: 200;
 
-        p {
-            font-weight: 400;
-            background-color: var(--color-4);
+        li {
             padding: .25rem;
-            border: 1px solid var(--color-5)
+            border-bottom: 2px solid var(--color-5);
         }
+    }
+
+    .filteringHeaders {
+        font-weight: 400;
+        background-color: var(--color-1);
+    }
+
+    .filteringRules {
+        font-weight: 200;
     }
 }
