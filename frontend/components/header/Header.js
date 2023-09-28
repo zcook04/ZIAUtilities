@@ -4,6 +4,9 @@ import React, { useEffect } from 'react'
 import styles from './Header.module.scss'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+
+
 
 const Header = () => {
     const router = useRouter()
@@ -46,7 +49,8 @@ const Header = () => {
         <header className={styles.header}>
             <h2>Zscaler Internet Access Utilities</h2>
             <ul>
-                <li>Optimize GRE POPs</li>
+                <Link href="gre-tunnels"><li>GRE Tunnels</li></Link>
+                <Link href='firewall-filtering'><li>Firewall</li></Link>
                 <li onClick={signOffHandler}>Sign Off</li>
             </ul>
         </header>
