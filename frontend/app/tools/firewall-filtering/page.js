@@ -5,6 +5,7 @@ import styles from './page.module.scss'
 import SummarySection from '@/components/summary-section/SummarySection'
 import { toast } from 'react-toastify'
 import FirewallRuleset from '@/components/firewall/firewallRuleset/FirewallRuleset'
+import FirewallFindings from '@/components/firewall/firewallFindings/FirewallFindings'
 
 const FirewallFilteringPage = () => {
     const [filteringRules, setFilteringRules] = useState([])
@@ -38,6 +39,7 @@ const FirewallFilteringPage = () => {
         <>
             <SummarySection title={'Firewall Filtering'} description={'Review and analyze common security misconfigurations as it relates to the firewall filtering policy withing Zscaler Internet Access.'} />
             <FirewallRuleset filteringRules={filteringRules} loading={loading} setLoading={setLoading} />
+            <FirewallFindings />
         </>
     )
 }

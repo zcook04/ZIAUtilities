@@ -1,0 +1,23 @@
+.findingGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+
+    .findingItem {
+        background-color: var(--color-1);
+        color: var(--color-2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100px;
+        border-radius: 15px;
+        transition: all .25s ease-in-out;
+    }
+
+    .findingItem:hover {
+        cursor: pointer;
+        transition: all .25s ease-in-out;
+        transform: scale(1.01);
+        background-color: var(--color-3);
+    }
+}
