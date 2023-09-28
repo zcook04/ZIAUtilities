@@ -2,6 +2,11 @@ import React from 'react'
 import styles from './firewallRuleset.module.scss'
 
 const FirewallRuleset = ({ filteringRules, loading }) => {
+    const customSort = (a, b) => {
+        if (a.order === -1) return 1;
+        if (b.order === -1) return -1;
+        return a.order - b.order;
+    }
 
     return (
         <section className={styles.mainSection}>
@@ -16,7 +21,7 @@ const FirewallRuleset = ({ filteringRules, loading }) => {
                 <p>Port</p>
                 <p>Priority</p>
             </ul>
-            {filteringRules && filteringRules.length > 0 && filteringRules.map((rule) => <p
+            {filteringRules && filteringRules.length > 0 && filteringRules.sort((a, b) => (customSort(a, b))).map((rule) => <p
                 key={rule.id}>{rule.name}</p>)}
             {!filteringRules && !loading && <p>An Error Occurred. Failed to retrieve firewall rules.</p>}
             {loading && <p>Loading Filtering Rules...</p>}

@@ -2,5 +2,12 @@
     ul {
         display: grid;
         grid-template-columns: repeat(8, 1fr);
+
+        p {
+            font-weight: 400;
+            background-color: var(--color-4);
+            padding: .25rem;
+            border: 1px solid var(--color-5)
+        }
     }
 }
