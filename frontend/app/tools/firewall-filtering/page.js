@@ -34,8 +34,6 @@ const FirewallFilteringPage = () => {
         fetchFilteringRules()
     }, [])
 
-    console.log(filteringRules)
-
     return (
         <>
             <SummarySection title={'Firewall Filtering'} description={'Review and analyze common security misconfigurations as it relates to the firewall filtering policy withing Zscaler Internet Access.'} />
